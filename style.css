@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: rgb(15, 19, 40);
+    color: rgb(17, 230, 230);
+    font-family: Verdana, sans-serif;
+}
+
+#title h1 {
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 3px;
+    font-size: 60px;
+}
+
+#title h1 span {
+    font-size: 80px;
+    font-family: 'Amiga Forever', sans-serif;
+}
