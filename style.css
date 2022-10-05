@@ -15,10 +15,24 @@ body{
     text-align: center;
     padding: 20px;
     letter-spacing: 3px;
-    font-size: 60px;
+    font-size: 40px;
 }
 
 #title h1 span {
-    font-size: 80px;
+    font-size: 50px;
     font-family: 'Amiga Forever', sans-serif;
 }
+
+#title:hover {
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }
