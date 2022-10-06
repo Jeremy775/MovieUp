@@ -1,4 +1,5 @@
-document.querySelector('#rechercher').addEventListener('click', getPokemon)
+// ----------------------RECHERCHER UN POKEMON-----------------------------
+document.querySelector('#rechercher').addEventListener('click', findPokemon)
 
 function capitalizeFirstLetter(string)
 {
@@ -11,7 +12,7 @@ function toLowerCase(string)
     return string.toLowerCase()
 }
 
-function getPokemon(e)
+function findPokemon(e)
 {
     const nameValue = document.querySelector('#search').value
     const name = toLowerCase(nameValue)
@@ -32,3 +33,49 @@ function getPokemon(e)
 
     e.preventDefault()
 } 
+// ----------------------RECHERCHER UN POKEMON-----------------------------
+
+
+//  -------------------------LISTE DES POKEMON-----------------------------
+const poke_container = document.getElementById('poke-container')
+
+const poke_number = 150
+
+
+const fetchPokemons = async () => 
+{
+    for(let i = 1; i <= poke_number; i++)
+    {
+        await getPokemon(i)
+    }
+}
+
+const getPokemon = async id => 
+{
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+    const res = await fetch(url)
+    const pokemon = await res.json()
+    createPokeCard(pokemon)
+}
+
+
+fetchPokemons()
+
+
+function createPokeCard(pokemon)
+{
+    const pokeEl = document.createElement('div')
+    pokeEl.classList.add('pokemon')
+    pokeEl.innerHTML = `
+        <div class="movie">
+            <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+            <div class="movie-info">
+                <h3>${capitalizeFirstLetter(pokemon.name)}</h3>
+                <span>${pokemon.weight}</span>
+            </div>
+        </div>
+    `
+
+    poke_container.appendChild(pokeEl)
+}
+//  -------------------------LISTE DES POKEMON-----------------------------
