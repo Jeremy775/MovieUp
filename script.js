@@ -67,11 +67,11 @@ function createPokeCard(pokemon)
     const pokeEl = document.createElement('div')
     pokeEl.classList.add('pokemon')
     pokeEl.innerHTML = `
-        <div class="movie">
+        <div class="pokemon">
             <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
-            <div class="movie-info">
+            <div class="poke-info">
                 <h3>${capitalizeFirstLetter(pokemon.name)}</h3>
-                <span>${pokemon.weight}</span>
+                <span>poids: ${pokemon.weight} kg</span>
             </div>
         </div>
     `

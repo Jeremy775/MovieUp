@@ -11,10 +11,12 @@ body{
     font-family: Verdana, sans-serif;
 }
 
+/* ------------TITRE----------- */
+
 #title h1 {
     text-align: center;
     letter-spacing: 6px;
-    font-size: 6vw;
+    font-size: 4vw;
     font-family: 'Pokemon Solid', sans-serif;
 }
 
@@ -32,10 +34,24 @@ body{
     }
 }
 
+/* ------------TITRE----------- */
+
+/* ------------RECHERCHE----------- */
+
 #form {
-    padding: 1rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+  
+#form button {
+    background-color: transparent;
+    border: 2px solid aliceblue;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    color: aqua;
+    cursor: pointer;
 }
 
 #search {
@@ -45,7 +61,7 @@ body{
     border-radius: 50px;
     font-size: 1.5rem;
     color: aqua;
-}
+} 
 
 #search:focus {
     outline: 0;
@@ -55,3 +71,17 @@ body{
 #search::placeholder {
     color: rgb(1, 179, 179);
 }
+
+/* ------------RECHERCHE----------- */
+
+/* ------------LISTE DES POKEMONS----------- */
+#poke-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.poke-info {
+    text-align: center;
+}
+/* ------------LISTE DES POKEMONS----------- */
