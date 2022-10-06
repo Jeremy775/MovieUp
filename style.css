@@ -13,13 +13,8 @@ body{
 
 #title h1 {
     text-align: center;
-    padding: 20px;
-    letter-spacing: 3px;
-    font-size: 40px;
-}
-
-#title h1 span {
-    font-size: 50px;
+    letter-spacing: 6px;
+    font-size: 6vw;
     font-family: 'Pokemon Solid', sans-serif;
 }
 
@@ -40,7 +35,7 @@ body{
 #form {
     padding: 1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 #search {
