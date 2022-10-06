@@ -41,6 +41,23 @@ const poke_container = document.getElementById('poke-container')
 
 const poke_number = 150
 
+const colors = {
+	fire: '#ff1a1a',
+	grass: '#009900',
+	electric: '#ffff1a',
+	water: '#668cff',
+	ground: '#ffffcc',
+	rock: '#666633',
+	fairy: '#fceaff',
+	poison: '#5c00e6',
+	bug: '#f8d5a3',
+	dragon: '#97b3e6',
+	psychic: '#d98cc6',
+	flying: '#F5F5F5',
+	fighting: '#E6E0D4',
+	normal: '#F5F5F5'
+};
+const main_types = Object.keys(colors);
 
 const fetchPokemons = async () => 
 {
@@ -63,14 +80,20 @@ fetchPokemons()
 
 
 function createPokeCard(pokemon)
-{
+{   
+    const poke_type = pokemon.types.map(el => el.type.name)
+    const type = main_types.find(type => poke_type.indexOf(type) > -1)
+
     const pokeEl = document.createElement('div')
     pokeEl.classList.add('pokemon')
+
+    const color = colors[type]
+
     pokeEl.innerHTML = `
         <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
         <div class="poke-info">
             <h3>${capitalizeFirstLetter(pokemon.name)}</h3>
-            <span>poids: ${pokemon.weight} kg</span>
+            <small class="type"><span style="background-color: ${color}">${type}</span></small>
         </div>
     `
 
