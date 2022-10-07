@@ -96,12 +96,14 @@ body{
 .pokemon img {
     border-radius: 50%;
     background-color: rgba(0, 0, 61, 0.4);
+    width: 15vw;
 }
 
 .pokemon {
     border: 2px solid aliceblue;
     box-shadow: 0 3px 15px rgba(222, 215, 215, 0.5);
     margin: 0.5rem 0;
+    width: 15vw;
 }
 
 .poke-info {
@@ -118,5 +120,30 @@ body{
     padding: 0.5em;
     color: black;
     border-radius: 30%;
+}
+
+@media (max-width: 1053px) {
+    .pokemon img {
+        width: 200px;
+    }
+    
+    .pokemon {
+        width: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .pokemon img {
+        width: 80%;
+    }
+    
+    .pokemon {
+        width: 80%;
+    }
+
+    #form {
+        display: flex;
+        flex-direction: column;
+    }
 }
 /* ------------LISTE DES POKEMONS----------- */
