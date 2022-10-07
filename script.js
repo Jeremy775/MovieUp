@@ -75,7 +75,6 @@ const getPokemon = async id =>
     createPokeCard(pokemon)
 }
 
-
 fetchPokemons()
 
 
@@ -89,14 +88,22 @@ function createPokeCard(pokemon)
 
     const color = colors[type]
 
-    pokeEl.innerHTML = `
+    let resdesc = fetch(pokemon["species"]["url"]).then((response) => response.json()).then((data) => {
+        pokeEl.innerHTML = `
         <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
         <div class="poke-info">
             <h3>${capitalizeFirstLetter(pokemon.name)}</h3>
             <small class="type"><span style="background-color: ${color}">${type}</span></small>
         </div>
-    `
+        <div class="overview">
+            <h3>Informations</h3>
+            <p>${data.flavor_text_entries["16"].flavor_text}</p>
+        </div>
+    `;
 
     poke_container.appendChild(pokeEl)
+    }
+
+    )  
 }
 //  -------------------------LISTE DES POKEMON-----------------------------
